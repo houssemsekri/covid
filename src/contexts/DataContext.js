@@ -20,7 +20,7 @@ function DataContextProvider({ children }) {
       setdata({ ...data });
     }
     fetchData(contry);
-  }, [data]);
+  }, []);
   useEffect(() => {
     let url = "https://covid19.mathdro.id/api/daily";
     async function fetchDailyData() {
@@ -29,7 +29,7 @@ function DataContextProvider({ children }) {
       setdailyData(daily);
     }
     fetchDailyData();
-  }, [dailyData]);
+  }, []);
   useEffect(() => {
     let url = "https://covid19.mathdro.id/api/countries";
     async function fetchContries() {
@@ -42,7 +42,7 @@ function DataContextProvider({ children }) {
       setContries(newcontries);
     }
     fetchContries();
-  }, [Contries]);
+  }, []);
   return (
     <DataContext.Provider
       value={{ data, dailyData, Contries, handleChangeContry, contry }}
